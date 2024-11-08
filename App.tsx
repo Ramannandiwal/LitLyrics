@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -16,6 +17,8 @@ import GenreScreen from './Screens/GenreScreen/GenreScreen';
 import ProfileScreen from './Screens/ProfileScreen/Profile';
 import SignUpScreen from './Screens/SignUpScreen/SignUpScreen';
 import SignIn from './Screens/SignIn/SignIn';
+import Email from './Screens/ForgotPassword/EmailSend/Email';
+import EmailVerificaiton from './Screens/ForgotPassword/EmailVerification/EmailVerification';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -37,7 +40,7 @@ const App = () => {
     return (
         <>
             {/* Global StatusBar configuration */}
-            <StatusBar barStyle={"dark-content"} backgroundColor={"#FAF7EF"} />
+            <StatusBar barStyle={'dark-content'} backgroundColor={'#FAF7EF'} />
 
 
             <NavigationContainer>
@@ -114,7 +117,7 @@ const App = () => {
                                     title=""
 
                                     loading={true}
-                                    width={"20%"}
+                                    width={'20%'}
                                     onBackPress={() => navigation.goBack()}
                                 />
                             ),
@@ -132,7 +135,7 @@ const App = () => {
                                     title=""
 
                                     loading={true}
-                                    width={"40%"}
+                                    width={'40%'}
                                     onBackPress={() => navigation.goBack()}
                                 />
                             ),
@@ -150,7 +153,7 @@ const App = () => {
                                     title=""
 
                                     loading={true}
-                                    width={"60%"}
+                                    width={'60%'}
                                     onBackPress={() => navigation.goBack()}
                                 />
                             ),
@@ -168,7 +171,7 @@ const App = () => {
                                     title=""
 
                                     loading={true}
-                                    width={"80%"}
+                                    width={'80%'}
                                     onBackPress={() => navigation.goBack()}
                                 />
                             ),
@@ -185,7 +188,7 @@ const App = () => {
                                     title=""
 
                                     loading={true}
-                                    width={"100%"}
+                                    width={'100%'}
                                     onBackPress={() => navigation.goBack()}
                                 />
                             ),
@@ -203,13 +206,48 @@ const App = () => {
                                     title=""
 
                                     loading={false}
-                                   
+
                                     onBackPress={() => navigation.goBack()}
                                 />
                             ),
                             headerShadowVisible: false,
                         })}
                     />
+                    <Stack.Screen
+                        name="Email"
+                        component={Email}
+                        options={({ navigation }) => ({
+                            headerTransparent: true,
+                            header: () => (
+                                <MyCustomHeader
+                                    title=""
+
+                                    loading={false}
+
+                                    onBackPress={() => navigation.goBack()}
+                                />
+                            ),
+                            headerShadowVisible: false,
+                        })}
+                    />
+                        <Stack.Screen
+                        name="EmailVerificaiton"
+                        component={EmailVerificaiton}
+                        options={({ navigation,isEmail }) => ({
+                            headerTransparent: true,
+                            header: () => (
+                                <MyCustomHeader
+                                    title=""
+
+                                    loading={false}
+
+                                    onBackPress={() => navigation.goBack()}
+                                />
+                            ),
+                            headerShadowVisible: false,
+                        })}
+                    />
+
 
 
 
