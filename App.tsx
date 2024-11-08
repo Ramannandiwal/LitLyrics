@@ -19,6 +19,8 @@ import SignUpScreen from './Screens/SignUpScreen/SignUpScreen';
 import SignIn from './Screens/SignIn/SignIn';
 import Email from './Screens/ForgotPassword/EmailSend/Email';
 import EmailVerificaiton from './Screens/ForgotPassword/EmailVerification/EmailVerification';
+import NewPassword from './Screens/ForgotPassword/NewPassword/NewPassword';
+import HomeScreen from './Screens/HomeScreen/HomeScreen';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -247,8 +249,29 @@ const App = () => {
                             headerShadowVisible: false,
                         })}
                     />
+                      <Stack.Screen
+                        name="NewPassword"
+                        component={NewPassword}
+                        options={({ navigation }) => ({
+                            headerTransparent: true,
+                            header: () => (
+                                <MyCustomHeader
+                                    title=""
 
+                                    loading={false}
 
+                                    onBackPress={() => navigation.goBack()}
+                                />
+                            ),
+                            headerShadowVisible: false,
+                        })}
+                    />
+                    
+                    <Stack.Screen
+                        name="HomeScreen"
+                        component={HomeScreen}
+                        options={{ headerShown: false }}
+                    />
 
 
                 </Stack.Navigator>

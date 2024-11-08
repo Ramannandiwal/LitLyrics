@@ -5,7 +5,10 @@ import CustomButton from '../CustomButton';
 const Modal1 = ({
     isVisible,
     onClose,
-    next
+    next,
+    heading ="Sign Up! Successfully",
+    smallHeading ="Your account has been created, wait for a while we are preparing for you",
+    buttonText = "Thanks"
 }) => (
     <Modal
         animationType="slide"
@@ -22,10 +25,10 @@ const Modal1 = ({
                 />
                 </View> 
                 <View>
-                    <Text style={{textAlign:'center',fontWeight:"bold",fontSize:25,color:'#BA8B5A'}}>Sign Up! Successfully</Text>
+                    <Text style={{textAlign:'center',fontWeight:"bold",fontSize:25,color:'#BA8B5A'}}>{heading}</Text>
                 </View>
                 <View style={{marginTop:8}}>
-                    <Text style={{padding:8,fontSize:16,textAlign:'center'}}>Your account has been created, wait for a while we are preparing for you</Text>
+                    <Text style={{padding:8,fontSize:16,textAlign:'center'}}>{smallHeading}</Text>
                 </View>
                 <View style={{marginTop:10}}>
                     <Image
@@ -38,7 +41,7 @@ const Modal1 = ({
                <CustomButton 
                 bgcolor={"#BA8B5A"}
                 color={"white"}
-                text={"Thanks"}
+                text={buttonText}
                 onclick={()=>{next()}}
                 width={"90%"}
                 fontSize={15}

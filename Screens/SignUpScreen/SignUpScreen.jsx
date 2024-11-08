@@ -117,7 +117,7 @@ const SignUpScreen = ({ navigation }) => {
                         </View>
 
                         {/* Show Modal1 when Sign Up button is pressed */}
-                        {showModal1 && <Modal1 onClose={closeModal1} isVisible={showModal1} next={()=>{
+                        {showModal1 && <Modal1  onClose={closeModal1} isVisible={showModal1} next={()=>{
                             
                             setShowModal1(!showModal1)
                             setShowModal2(true)

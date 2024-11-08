@@ -112,7 +112,7 @@ const SignIn = ({ navigation }) => {
                     <CustomButton
                         bgcolor={'#BA8B5A'}
                         color={'white'}
-                        onclick={() => {}} // Show Modal1 on button click
+                        onclick={() => {navigation.navigate("HomeScreen")}} // Show Modal1 on button click
                         text={"Sign In"}
                         width={'90%'}
                         radius={30}

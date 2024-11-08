@@ -90,8 +90,8 @@ const EmailVerification = ({ route, navigation }) => {
                 <CustomButton
                     bgcolor={'#BA8B5A'}
                     color={'white'}
-                    onclick={() => navigation.navigate('NextScreen')} // Navigate on button click
-                    text={"Sign In"}
+                    onclick={() => navigation.navigate('NewPassword')} // Navigate on button click
+                    text={"Confirm"}
                     width={'90%'}
                     radius={30}
                 />
